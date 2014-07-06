@@ -52,11 +52,13 @@ Alternatively to the direct start of the PingVerticle, you can also start module
 ```
 # Build with Maven (not shown, see pom.xml)
 ...
-cd src\main\resources
-# see which verticles are the main verticles of the module
+cd mass-pingpong\src\main\resources
+# see which verticles are the main verticles of the module (should be both `PingVerticle` and `StatusMonitorVerticle`)
 cat app.js
 # switch to target directory where Maven has created the module
 cd mass-pingpong\src\target
 vertx runzip mass-pingpong-0.1-mod.zip -cluster
+# Now the PingVerticle shows the counters for all messages ids regularly
+# In parallel one can also access these information via http from the StatusMonitorVerticle, i.e. via http://localhost:8123
 ```
  
