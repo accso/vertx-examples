@@ -1,0 +1,36 @@
+<!--
+   Vert.x example 'simple-pingpong'
+   Example for a simple JavaScript PongVerticle in Browser, get
+   receives event-bus messages via SockJS and EventBus2SockJSBridge
+       
+   @author lehmann, schaal, grammes
+-->
+
+<html>
+<body>
+<h1>
+Pong Verticle (JavaScript, in Browser, via SockJS)
+</h1>
+Logs incoming messages from event-bus to browser console (Chrome: Show console via CTRL-SHIFT-j).
+<br>
+Start server side Ping- and PongVerticles and the ServerSideEventBus2SockJSBridge.js bridge verticle first.
+
+<script src='http://cdn.sockjs.org/sockjs-0.3.4.min.js'></script>
+<script src='vertxbus-2.1.js'></script>
+
+<script>
+    var bus = new vertx.EventBus('http://localhost:8645/eventbus');
+
+    bus.onopen = function() {
+       console.log(new Date() + ' - Now connected to server-side event-bus');
+
+       bus.registerHandler('ping-address', function(message, replier) {
+           console.log(new Date() + ' - Received message: ' + message);
+		   bus.send('pong-address','pong-from-javascript-in-browser!');
+	  	   console.log('Sent back pong from JavaScript in browser via SockJS!')
+       });
+    }
+</script>
+
+</body>
+</html>

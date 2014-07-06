@@ -1,0 +1,20 @@
+//
+// Module descriptor
+// @author lehmann, schaal, grammes
+//
+{
+  // Java verticle
+  "main":"de.accso.helloworldhttpserver.HelloWorldHttpServer",
+
+  // If your module is going to be registered in the Vert.x module registry you will also need the following
+  // mandatory fields
+  "description":"Accso, Simple httpd server sample",
+  "licenses": ["The Apache Software License Version 2.0"],
+  "author": "Ruediger Grammes, Kristine Schaal, Martin Lehmann",
+
+  // Optional fields
+  "developers": ["Ruediger Grammes", "Kristine Schaal", "Martin Lehmann"],
+  "homepage": "www.accso.de",
+
+  "auto-redeploy": true
+}

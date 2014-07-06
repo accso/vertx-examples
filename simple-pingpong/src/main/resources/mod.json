@@ -1,0 +1,30 @@
+//
+// Module descriptor
+// @author lehmann, schaal, grammes
+//
+{
+  // Java verticle
+  // "main":"de.accso.simplepingpong.PongVerticle",
+  // "main":"de.accso.simplepingpong.PingVerticle",
+
+  // Groovy *script* verticle
+  "main": "PongVerticleGroovy.groovy",
+
+  // JavaScript verticle
+  // "main": "pong_verticle_js.js",
+
+  // Python verticle
+  // "main": "pong_verticle_python.py",
+
+  // If your module is going to be registered in the Vert.x module registry you will also need the following
+  // mandatory fields
+  "description":"Accso, Simple Ping-Pong sample",
+  "licenses": ["The Apache Software License Version 2.0"],
+  "author": "Ruediger Grammes, Kristine Schaal, Martin Lehmann",
+
+  // Optional fields
+  "developers": ["Ruediger Grammes", "Kristine Schaal", "Martin Lehmann"],
+  "homepage": "www.accso.de",
+
+  "auto-redeploy": true
+}
