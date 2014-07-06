@@ -4,7 +4,7 @@ vertx-examples
 Vert.x examples for Accso's JavaSPEKTRUM article, to be published in 2014
 
 ##simple-httpd
-Simple HTTP server verticle, listens on port 8123. Returns a static hello world http response.
+Simple HTTP server verticle, listens on port 8123. Returns a static `Hello World!` http response.
 
 Start with:
 ```
@@ -50,11 +50,13 @@ vertx run PingVerticle.java -cluster
 
 Alternatively to the direct start of the PingVerticle, you can also start module (i.e. both `PingVerticle` and `StatusMonitorVerticle`):
 ```
-build with maven
+# Build with Maven (not shown, see pom.xml)
+...
 cd src\main\resources
 # see which verticles are the main verticles of the module
 cat app.js
+# switch to target directory where Maven has created the module
 cd mass-pingpong\src\target
-vertx runzip mass-pingpong-0.1-mod.zip
+vertx runzip mass-pingpong-0.1-mod.zip -cluster
 ```
  
